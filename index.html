@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Assignment 2</title>
+    <style>
+        .f1 {
+            background-image: linear-gradient(Indigo, LightBlue);
+            text-align: center;
+            overflow: hidden;
+        }
+        .f1_l {
+            float: left;
+            text-align: left;
+        }
+        .f1_right {
+            float: right;
+        }
+        .f2 {
+            
+        }
+        .f2{
+            background-color: Indigo;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="main">
+    <div class="f1">
+        <h1 style="color: aliceblue;"><em>PHP Assignment - 2</em></h1>
+        <div class="f1_l">
+            <h3>
+                <em style="color: aliceblue;">
+                    Submitted By :
+                </em>
+            </h3>
+            <p style="color: aliceblue;">
+                <em>
+                    Name : Ritik Bhushan Yadav<br>
+                    Univ. Roll No : 191500658<br>
+                    Section : 3F<br>
+                    Class Roll No : 33<br>
+                </em>
+            </p>
+        </div>
+        <div class="f1_right">
+            <h3>
+                <em style="color: aliceblue;">
+                    Submitted To :
+                </em>
+            </h3>
+            <p style="color: aliceblue">
+                <em>
+                    Name : Akash Kumar Choudhary
+                </em>
+            </p>
+        </div>
+    </div>
+    <diV class="mid">
+        <h4><em>Q1.Write a program to calculate Electricity bill in PHP
+            </em></h4>
+        <h3>Description:</h3>
+        <P>
+            You need to write a PHP Script to calculate electricity bill using if-else conditions.<br>
+
+            <Strong>Conditions:</Strong><br>
+
+            For first 50 units – Rs. 3.50/unit<br>
+            For next 100 units – Rs. 4.00/unit<br>
+            For next 100 units – Rs. 5.20/unit<br>
+            For units above 250 – Rs. 6.50/unit<br>
+            You can use conditional statements.
+        </P>
+        <h4 style="color: brown;">Solution Code :</h4>
+        <table border="1" style="border-collapse: collapse; width: 50%;margin-left: auto; margin-right: auto;background-color: black;">
+            <tbody>
+            <tr>
+            <td style="width: 100%;color: aliceblue;">&lt;?php<br />$unit = (int)readline("Enter The Total Unit :");<br />$cost = 0;<br />if($unit &lt;= 50){<br />$cost += ($unit *3.50);<br />}else if($unit &lt;= 150)<br />{<br />$cost += (50 * 3.50);<br />$unit -= 50;<br />$cost += ($unit * 4);<br />}else if($unit &lt;= 250)<br />{<br />$cost += (50 * 3.50);<br />$unit -= 50;<br />$cost += (100 * 4);<br />$unit -= 100;<br />$cost += ($unit * 5.20);<br />}else{<br />$cost += (50 * 3.50);<br />$unit -= 50;<br />$cost += (100 * 4);<br />$unit -= 100;<br />$cost += (100 * 5.20);<br />$unit -= 100;<br />$cost += ($unit * 6.50);<br />}<br />echo "Total Cost Price : $cost";<br><p>?&gt;</p><br></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h4><em>Q2. Write a PHP program to check whether a number is positive, negative or zero</em></h4>
+        <h3>Description:</h3>
+        <p>Write a PHP program to check whether a number is positive, negative or zero.</p>
+        <P>
+            <strong><em>Instructions:</em></strong>
+            You can use if else conditions.
+            You should use appropriate PHP Operators.
+            Also check if it not a numeric value.
+        </P>
+        <h4 style="color: brown;">Solution Code :</h4>
+        <table border="1" style="border-collapse: collapse; width: 50%;margin-left: auto; margin-right: auto;background-color: black;">
+            <tbody>
+            <tr>
+            <td style="width: 100%; color: aliceblue;"><p>&lt;?php</p><br>$number = readline("Enter The Number :");<br />if(is_numeric($number)){<br />if($number == 0){<br />echo "Number is Zero";<br />}else if($number &lt; 0){<br />echo "Number is Negative";<br />}else{<br />echo "Number is Positive";<br />}<br />}else{<br />echo "Input is Not Numeric";<br /><p>?&gt;</p><br>}</td>
+            </tr>
+            </tbody>
+        </table>
+        <h4><em>Q3. Write a program to convert the given string into an array.
+            Suppose the string is -</em></h4>
+        <h3>Description:</h3>
+        <p>$a = 'Burch Jr, Philip H., The American establishment, Research in political economy </p>
+        <h4 style="color: brown;">Solution Code :</h4>
+        <table border="1" style="width: 50%; border-collapse: collapse; margin-left: auto; margin-right: auto;background-color: black;">
+            <tbody>
+            <tr>
+            <td style="width: 100%;color: aliceblue;"><p>&lt;?php</p><br>$str = readline("Enter The String");<br />$My_arr = [];<br />$st = "";<br />$k = 0;<br />for($i = 0;$i&lt;strlen($str);$i++){<br />if($str[$i]!=","){<br />$st.=$str[$i];<br /><br />}else{<br />$My_arr[$k] = $st;<br />$k++;<br />$st = "";<br />}<br />}<br />$My_arr[$k] = $st;<br />foreach($My_arr as $s){<br />echo "$s\n";<br /><p>?&gt;</p><br>}</td>
+            </tr>
+            </tbody>
+        </table>
+        <h4><em>Q4. There are two deals of an item to buy. The quantities and prices of the item are given below. Write a program in PHP to find the best deal to purchase the item.</em></h4>
+        <h3>Description:</h3>
+        <p>$quantity1 = 70;<br>
+            $quantity2 = 100;<br>
+            $price1 = 1035;<br>
+            $price2 = 1200; </p>
+        <h4 style="color: brown;">Solution Code :</h4>
+        <table border="1" style="width: 50%; border-collapse: collapse; margin-left: auto; margin-right: auto;background-color: black;">
+            <tbody>
+            <tr>
+            <td style="width: 100%;color: aliceblue;"><p>&lt;?php</p><br>$quantity1 = 70;<br />$quantity2 = 100;<br />$price1 = 1035;<br />$price2 = 1200;<br />$fp = $price1 / $quantity1;<br />$sp = $price2 / $quantity2;<br />if($fp &lt; $sp){<br />echo "The Best Deal is : "."Quantity : ".$quantity1." "."Price : ".$price1;<br />}else{<br />echo "The Best Deal is : "."Quantity : ".$quantity2." "."Price : ".$price2;<br /><p>?&gt;</p><br>}</td>
+            </tr>
+            </tbody>
+        </table>
+        <h4><em>Q5. Write a PHP script to find the first character that is different between two strings.
+        </em></h4>
+        <h3>Description:</h3>
+        <p>String1 : 'National'<br>
+            String2 : 'Nationel'
+             </p>
+        <h4 style="color: brown;">Solution Code :</h4>
+        <table border="1" style="border-collapse: collapse; width: 50%;margin-left: auto; margin-right: auto;background-color: black;">
+            <tbody>
+            <tr>
+            <td style="width: 100%;color: aliceblue;">
+            <p>&lt;?php</p>
+            <p>$string1 = readline("Enter The First String : ");<br />$string2 = readline("Enter The Second String : ");<br />$index = strspn("$string1"^"$string2","\0");<br />echo "First Character : $string1[$index]";</p>
+            <p>?&gt;</p>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+    </diV>
+    <div class = "f2">
+        <center>
+            <h4 style="color: aliceblue;">CodexRitik</h4>
+            <a href="https://github.com/CodexRitik" style="color: aliceblue;">GitHub Source Code</a>
+        </center>
+    </div>
+</body>
+</html>
